@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'list of beers', beers_path %>
+
+
+<h2>  <%= @brewery.name %></h2>
+<i>Established in <%= @brewery.year %></i>
+
+<p>Current beer amount: <strong style="color:red"> <%= @brewery.beers.count %></strong></p>
+
+<ul>
+	<% @brewery.beers.each do |beer| %>
+	<li> <%= link_to beer.name, beer %> </li>
+	<% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
+<%= link_to 'Back', breweries_path %>
