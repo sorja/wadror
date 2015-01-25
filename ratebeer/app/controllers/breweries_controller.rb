@@ -1,5 +1,17 @@
 class BreweriesController < ApplicationController
   before_action :set_brewery, only: [:show, :edit, :update, :destroy]
+  #only for admins
+  #Before everything else, do this.
+  before_action :authenticate, only: [:destroy]
+  def authenticate
+    #Creates a login screen
+    authenticate_or_request_with_http_basic do |user,pass|
+      user == hevonen and pass == kaljahevonen
+      continue
+    end
+
+  end
+
 
   # GET /breweries
   # GET /breweries.json

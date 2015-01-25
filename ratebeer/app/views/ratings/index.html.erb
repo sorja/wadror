@@ -1,0 +1,23 @@
+<h2> moro </h2>
+
+
+
+<table>
+	<thead>
+		<tr>
+			<td>Score</td>
+			<td>options</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @ratings.each do |rating| %>
+		<tr>
+			<td> <%= rating %> </td>
+			<td><!--<%= button_to 'delete', rating, method: :delete  %> --> del button error </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<p>Total: <%= @ratings.count %></p>
+
+<%= link_to "new rating", new_rating_path %>
