@@ -14,5 +14,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/db/migrate
-/tmp/
+db/migrate
+tmp/
