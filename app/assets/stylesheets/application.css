@@ -14,9 +14,6 @@
  *= require_self
  */
 
-body{
-	font-family:'Helvetica', 'Arial', 'monospace';
-}
 .navibar {
     padding: 10px;
     background: #EFEFEF;

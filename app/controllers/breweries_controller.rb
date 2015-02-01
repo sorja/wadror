@@ -1,25 +1,11 @@
 class BreweriesController < ApplicationController
   before_action :set_brewery, only: [:show, :edit, :update, :destroy]
-  #only for admins
-  #Before everything else, do this.
   before_action :authenticate, only: [:destroy]
-  def authenticate
-    #Creates a login screen
-    authenticate_or_request_with_http_basic do |user,pass|
-      user == hevonen and pass == kaljahevonen
-      continue
-    end
-
-  end
-
 
   # GET /breweries
   # GET /breweries.json
   def index
     @breweries = Brewery.all
-    # render :panimot
-    # This has a hidden render :index
-  # which is viewb/breweries/index.html.erb
   end
 
   # GET /breweries/1
@@ -77,6 +63,15 @@ class BreweriesController < ApplicationController
   end
 
   private
+
+    def authenticate
+      admin_accounts = { "admin" => "sekret", "pekka" => "beer", "arto" => "foobar", "matti" => "ittam"}
+
+      authenticate_or_request_with_http_basic do |username, password|
+        admin_accounts[username] == password
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_brewery
       @brewery = Brewery.find(params[:id])
