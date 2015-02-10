@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'
 
-  resource :session, only: [:new, :create]
+  resource :session, only: [:new, :create, :delete]
 
   resources :beers
 
