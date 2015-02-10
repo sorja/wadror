@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/sorja/wadror.svg)](https://travis-ci.org/sorja/wadror)
+{<img src="https://travis-ci.org/sorja/wadror.svg" alt="Build Status" />}[https://travis-ci.org/sorja/wadror]
